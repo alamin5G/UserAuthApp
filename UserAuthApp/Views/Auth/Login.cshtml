@@ -1,0 +1,22 @@
+﻿
+@{
+
+    ViewData["Title"] = "Login";
+    
+}
+
+
+<h1>Login</h1>
+<p style="color:darkgreen">@TempData["success"]</p>
+<form method="post">
+    <label>Username</label>
+    <input type="text" name="Username" required />
+    <label>Password</label>
+    <input type="password" name="PasswordHash" required />
+    <button type="submit">Login</button>
+    <br />
+    <p style="color: red">@ViewBag.Message</p>
+    @Html.ActionLink("Don't have an Account?", "Register", "Auth")
+</form>
+
+

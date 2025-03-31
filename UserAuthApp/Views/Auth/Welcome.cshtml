@@ -1,0 +1,29 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+    ViewData["Title"] = "Welcome";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Welcome, @TempData["success"]</h1>
+<h3>@TempData["username"]</h3>
+<p>Welcome to the User Authentication App</p>
+
+
+@if (!string.IsNullOrEmpty(@ViewBag.Message) && @ViewBag.Message.StartsWith(" "))
+{
+    <a href="@Url.Action("Logout", "Auth")">Logout</a>
+}
+else
+{
+    <a href="@Url.Action("Login", "Auth")">Login |</a>
+    
+    <a href="@Url.Action("Register", "Auth")" > Register </a>
+}
+@*
+<p>Click on the links below to Register or Login</p>
+<p>@Html.ActionLink("Register", "Register", "Auth")</p>
+<p>@Html.ActionLink("Login", "Login", "Auth")</p>
+*@
+

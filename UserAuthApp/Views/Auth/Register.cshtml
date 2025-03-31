@@ -1,0 +1,20 @@
+﻿
+@{
+
+
+    ViewData["Title"] = "Register";
+}
+
+@model UserAuthApp.Models.UserModel
+
+
+<h1>Register</h1>
+<form method="post">
+    <label>Username</label>
+    <input type="text" asp-for="Username" required />
+    <label>Password</label>
+    <input type="password" asp-for="PasswordHash" required />
+    <button type="submit">Register</button>
+    <pre>@Html.ActionLink("Do you have an account? Login Here..", "Login", "Auth")</pre>
+</form>
+
